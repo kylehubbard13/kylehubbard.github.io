@@ -22,7 +22,9 @@
     align-items: center;
   }
   
+  /* Hide menu toggle on desktop */
   .menu-toggle {
+    display: none;
     font-size: 1.5rem;
     background: none;
     border: none;
@@ -30,10 +32,40 @@
     cursor: pointer;
   }
   
+  /* Show menu toggle on mobile */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
   .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Always show nav on desktop */
     gap: 1rem;
+  }
+  
+  /* Mobile nav hidden by default */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide nav by default on mobile */
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      right: 1rem;
+      top: 60px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  
+    /* Show nav when toggled */
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin-bottom: 1rem;
+    }
   }
   
   .nav-links li a {
@@ -44,10 +76,6 @@
   .nav-links a.active {
     color: var(--highlight-color);
     font-weight: bold;
-  }
-  
-  .nav-links.show {
-    display: block;
   }
   
   #hero {
@@ -73,30 +101,5 @@
   
   section {
     padding: 3rem 1rem;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .project-card {
-    background: #eee;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-  }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background: #333;
-      position: absolute;
-      right: 1rem;
-      top: 60px;
-      padding: 1rem;
-    }
-  
-    .nav-links li {
-      margin-bottom: 1rem;
-    }
-  }
+    max-width
   
