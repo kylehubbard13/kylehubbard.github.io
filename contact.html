@@ -10,18 +10,26 @@
     <!-- Header will be loaded dynamically -->
     <header id="site-header"></header>
     <h1>Contact Us</h1>
-    <p>If you have any questions or need assistance, feel free to reach out to us.</p>
-    <p>Email: contact@example.com</p>
-    <p>Phone: +1-234-567-890</p>
-    <a href="index.html">Back to Home</a>
-    <script>
-        // Load header.html into the #header div
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data)
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-    <script src="headerLoader.js"></script>
-</body>
+    <p>Please fill out this form to email me directly.</p>
+    <!-- Contact Form -->
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Email</button>
+    </form>
+    <script src="headerLoader.js"></script>
+    <footer>
+        <p>&copy; 2025 Kyle Hubbard</p>
+    </footer>
+</body>
 </html>
