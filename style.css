@@ -1,67 +1,102 @@
-body {
+:root {
+    --accent-color: #007acc;
+    --accent-color-dark: #005fa3;
+    --highlight-color: #ff9800;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: #333;
+    padding: 1rem;
     color: #fff;
-    padding: 10px 20px;
+  }
+  
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 1.5em;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.menu-toggle {
-    display: none;
+  }
+  
+  .menu-toggle {
+    font-size: 1.5rem;
     background: none;
     border: none;
     color: #fff;
-    font-size: 1.5em;
     cursor: pointer;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links a.active {
+    color: var(--highlight-color);
+    font-weight: bold;
+  }
+  
+  .nav-links.show {
+    display: block;
+  }
+  
+  #hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #f4f4f4;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background 0.2s ease;
+  }
+  
+  .btn:hover {
+    background: var(--accent-color-dark);
+  }
+  
+  section {
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .project-card {
+    background: #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      right: 1rem;
+      top: 60px;
+      padding: 1rem;
     }
-
-    .menu-toggle {
-        display: block;
+  
+    .nav-links li {
+      margin-bottom: 1rem;
     }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-}
+  }
+  
