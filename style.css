@@ -101,5 +101,13 @@
   
   section {
     padding: 3rem 1rem;
-    max-width
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .project-card {
+    background: #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
   }
