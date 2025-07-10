@@ -1,13 +1,15 @@
 :root {
-    --accent-color: #007acc;
-    --accent-color-dark: #005fa3;
+    --accent-color: #00bcd4;
+    --accent-color-dark: #0097a7;
     --highlight-color: #ff9800;
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
   }
   
   header {
@@ -22,7 +24,6 @@
     align-items: center;
   }
   
-  /* Hide menu toggle on desktop */
   .menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -32,40 +33,10 @@
     cursor: pointer;
   }
   
-  /* Show menu toggle on mobile */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  }
-  
   .nav-links {
     list-style: none;
-    display: flex; /* Always show nav on desktop */
+    display: flex;
     gap: 1rem;
-  }
-  
-  /* Mobile nav hidden by default */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none; /* Hide nav by default on mobile */
-      flex-direction: column;
-      background: #333;
-      position: absolute;
-      right: 1rem;
-      top: 60px;
-      padding: 1rem;
-      border-radius: 0.5rem;
-    }
-  
-    /* Show nav when toggled */
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin-bottom: 1rem;
-    }
   }
   
   .nav-links li a {
@@ -78,10 +49,58 @@
     font-weight: bold;
   }
   
-  #hero {
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      right: 1rem;
+      top: 60px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .hero {
+    background: url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .hero .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
     text-align: center;
-    padding: 4rem 1rem;
-    background: #f4f4f4;
+    border-radius: 12px;
+  }
+  
+  section {
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  section h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
   
   .btn {
@@ -99,15 +118,23 @@
     background: var(--accent-color-dark);
   }
   
-  section {
-    padding: 3rem 1rem;
-    max-width: 800px;
-    margin: auto;
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
   }
   
-  .project-card {
-    background: #eee;
+  .portfolio-item {
+    background: #fff;
     padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
   }
+  
+  .portfolio-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
