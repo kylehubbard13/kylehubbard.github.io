@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Kyle Hubbard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header will be loaded dynamically -->
-    <header id="site-header"></header>
-    <h1>Contact Us</h1>
-    <p>Please fill out this form to email me directly.</p>
-    <!-- Contact Form -->
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+  <header id="site-header"></header>
 
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
+  <main class="contact-main">
+    <section class="contact-hero">
+      <h1>Let's Get in Touch</h1>
+      <p>Have a project or question? Send me a message below!</p>
+    </section>
 
-        <label for="message">Message:</label>
+    <section class="contact-form-section">
+      <form action="mailto:kylehubbard13@gmail.com" method="post" enctype="text/plain" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Send Email</button>
-    </form>
-    <script src="headerLoader.js"></script>
-    <footer>
-        <p>&copy; 2025 Kyle Hubbard</p>
-    </footer>
+        <button type="submit" class="btn">Send Email</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="headerLoader.js"></script>
+
+  <footer>
+    <p>&copy; 2025 Kyle Hubbard</p>
+  </footer>
 </body>
 </html>
